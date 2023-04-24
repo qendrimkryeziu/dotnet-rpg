@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using System.Security.Claims;
 
 namespace dotnet_rpg.Controllers
 {
@@ -18,7 +19,6 @@ namespace dotnet_rpg.Controllers
             _characterService = characterService;
         }
 
-        [AllowAnonymous]
         [HttpGet("GetAll")]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> Get()
         {
